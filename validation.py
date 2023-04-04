@@ -5,6 +5,7 @@ class validation():
     def __init__(self):
         self.evaluation = eval.evaluation()
 
+    #validation
     def validate(self):
         valSet = self.evaluation.classifier.validationSet.to_dict(orient="records")
         total = len(valSet)
@@ -21,5 +22,4 @@ class validation():
                 F += 1
         accuracy = T/total*100
         failing = F/total*100
-        print(f"accuracy = {accuracy}%\nfailing rate = {failing}%")
-
+        return f"accuracy = {accuracy}%\nfailing rate = {failing}%"
