@@ -23,7 +23,7 @@ def main():
 
     #click on the testing button
     def click():
-        text = runTetsing()
+        text = runTesting()
         label = tk.CTkLabel(master=window,
                             text= text)
         label.place(x=190, y=50)
