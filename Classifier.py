@@ -7,17 +7,17 @@ class Classifier:
         self.document = document
         self.dataSet = pd.read_csv(self.document, sep = "\t", index_col = False,
                                    names = ["type", "text"], header = None)
-        self.trainingSet, self.validationSet = self.split()
+        self.trainingSet, self.testingSet = self.split()
         self.trainingSpamDic = self.spamDic()
         self.trainingNotSpamDic = self.notSpamDic()
 
-    #split dataset into training and validation
+    #split dataset into training and testing
     def split(self):
         total = self.dataSet.count()[0]
         numTraining = math.floor(total*0.7)
         trainingSet = self.dataSet[:numTraining]
-        validationSet = self.dataSet[numTraining:]
-        return trainingSet, validationSet
+        testingSet = self.dataSet[numTraining:]
+        return trainingSet, testingSet
 
     #tokenizer
     def dataSetTokenizing(self):

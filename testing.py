@@ -1,13 +1,13 @@
 import evaluation as eval
 from tqdm import tqdm
 
-class validation():
+class testing:
     def __init__(self):
         self.evaluation = eval.evaluation()
 
-    #validation
-    def validate(self):
-        valSet = self.evaluation.classifier.validationSet.to_dict(orient="records")
+    #testing
+    def test(self):
+        valSet = self.evaluation.classifier.testingSet.to_dict(orient="records")
         total = len(valSet)
         T = 0
         F = 0
