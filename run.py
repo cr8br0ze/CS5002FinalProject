@@ -60,14 +60,14 @@ def main():
         label3.place(x=270, y=300)
 
         # click on button
-        def click():
+        def click2():
             text = textbox.get()
             eva = runEvaluation(text)
             label3.configure(text=eva)
 
         # make a button
         button3 = tk.CTkButton(windoww, text="Run",
-                              command=click)
+                              command=click2)
         button3.place(x=230, y=335)
 
     button2 = tk.CTkButton(window, text = "Run Evaluation",
